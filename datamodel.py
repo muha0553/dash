@@ -1,11 +1,6 @@
 # Import
-import dash
-from dash import dcc
-from dash import html
-import dash_bootstrap_components as dbc
-import plotly.express as px
 import pandas as pd
-import plotly.graph_objects as go
+import numpy as np
 
 
 ############################## Data import #####################
@@ -20,7 +15,7 @@ df_products = pd.read_excel(githubpath + "my_shop_data.xlsx", sheet_name="produc
 
 def get_data():
     # Employee name
-    df_employee['emp_name'] = df_employee['first_name'] + ' ' + df_employee['last_name']
+    df_employee['emp_name'] = df_employee['firstname'] + ' ' + df_employee['lastname']
     df_order['total'] = df_order['unitprice'] * df_order['quantity']
     order = pd.merge(df_order, df_products, on='product_id')
     order = pd.merge(order, df_employee, on='employee_id')
@@ -29,9 +24,9 @@ def get_data():
     # Order - Select colomns
     order = order[['order_id', 
                 'product_id', 'productname', 'type',
-                'customer_id', 'cust_name', 'city', 'country',
+                'customer_id', 'cust_name',
                 'employee_id', 'emp_name', 
-                'orderdate', 'deliverydate', 'deliverytime', 'orderyear', 'ordermonth',
                 'total']]
+
 
     return order

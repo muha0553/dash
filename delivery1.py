@@ -1,5 +1,7 @@
-# Import
-import dash
+# ***************************************
+# Imports
+# ***************************************
+# Dash
 from dash import html
 from dash import dcc
 from dash.dependencies import Input, Output
@@ -11,6 +13,10 @@ import numpy as np
 # Plotly
 import plotly.express as px
 import plotly.graph_objects as go
+
+# ***************************************
+# Get data
+# ***************************************
 
 import datamodel
 order = datamodel.get_data()
@@ -56,6 +62,7 @@ dash_app.layout = html.Div(
 )
 
 
+@dash_app.callback(Output('sales_employee', 'figure'))
 
 
 
@@ -64,4 +71,4 @@ dash_app.layout = html.Div(
 # Run the app
 # ***************************************
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    dash_app.run_server(debug=True)
