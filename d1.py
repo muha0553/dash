@@ -10,8 +10,7 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 
-#githubpath = https://github.com/muha0553/dash
-githubpath = './data/'
+
 #data import
 Excel_file = 'data/my_shop_data.xlsx'
 customers = pd.read_excel(Excel_file, "customers")
