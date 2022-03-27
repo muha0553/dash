@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'mt-dash-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C8BE4D60192841A2A9BCB959C5B280BD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_589F527A3030409DAF096A0AB695CCE8 }}
